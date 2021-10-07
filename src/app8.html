@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app-8">
+        <button v-on:click="fetch">Fetch</button>
+        <p>{{status}}</p>
+        <ol v-for="line in lines">
+            {{line.early_termination}}
+        </ol>
+    </div>
+    <!-- Scripts -->
+    <script src="js/app8.js"></script>
+</body>
+
+</html>
