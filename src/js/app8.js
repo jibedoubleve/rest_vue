@@ -6,6 +6,7 @@ var app8 = new Vue({
     },
     methods: {
         fetch: function () {
+            this.loadStatus = "Work in progress...";
             // Create a request variable and assign a new XMLHttpRequest object to it.
             var request = new XMLHttpRequest();
 
@@ -15,7 +16,7 @@ var app8 = new Vue({
             request.onload = function () {
                 // Begin accessing JSON data here
 
-                this.status = "Almost..."
+                this.loadStatus = "Almost..."
                 var data = JSON.parse(this.response)
 
                 this.lines = data.items;
@@ -25,9 +26,6 @@ var app8 = new Vue({
 
             // Send request
             request.send();
-
-            this.status = "Work in progress...";
-
         }
     }
 });
