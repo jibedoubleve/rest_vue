@@ -10,13 +10,17 @@
 
 <body>
     <div id="app-8">
-        <button v-on:click="fetch">Fetch</button>
+        <button v-on:click="fetch">{{buttonText}}</button>
         <p>{{loadStatus}}</p>
-        <ol v-for="line in lines">
-            {{line.early_termination}}
+        <ol v-for="line in lines.data">
+            <div class="card">
+                <img v-bind:src="line.avatar" alt="Photo">
+                <div>{{line.first_name}} <b>{{line.last_name}}</b></div>
+            </div>
         </ol>
     </div>
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/app8.js"></script>
 </body>
 
