@@ -14,19 +14,18 @@ var app8 = new Vue({
             const current_url = (this.pageNr != -1) ? this.url + "?page=" + this.pageNr : this.url;
             axios
                 .get(current_url)
-                    .then(response => {
-                        this.lines = response.data;
-                        this.loadStatus = "Page " + this.pageNr + "/" + response.data.total_pages + " loaded...";
+                .then(response => {
+                    this.lines = response.data;
+                    this.loadStatus = "Page " + this.pageNr + "/" + response.data.total_pages + " loaded...";
 
-                        if (this.pageNr < response.data.total_pages) {
-                            this.pageNr++;
-                            this.buttonText = "Fetch page " + this.pageNr;
-                        }
-                        else {
-                            this.pageNr = 1;
-                            this.buttonText = "Fetch page 1";
-                        }
-                    });
+                    if (this.pageNr < response.data.total_pages) {
+                        this.pageNr++;
+                        this.buttonText = "Fetch page " + this.pageNr;
+                    } else {
+                        this.pageNr = 1;
+                        this.buttonText = "Fetch page 1";
+                    }
+                });
         }
     }
 });
