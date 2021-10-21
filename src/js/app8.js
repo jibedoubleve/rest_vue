@@ -1,11 +1,13 @@
 var app8 = new Vue({
     el: "#app-8",
-    data: {
-        lines: "",
-        loadStatus: "",
-        pageNr: "1",
-        buttonText: "Fetch",
-        url: 'https://reqres.in/api/users'
+    data: function () {
+        return {
+            lines: "",
+            loadStatus: "",
+            pageNr: "1",
+            buttonText: "Fetch",
+            url: 'https://reqres.in/api/users'
+        }
     },
     methods: {
         fetch: function () {

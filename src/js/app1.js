@@ -1,6 +1,8 @@
 var app = new Vue({
     el: '#app',
-    data: {
-        message: "WAD rest service"
+    data: function () {
+        return {
+            message: "WAD rest service"
+        }
     }
 });
